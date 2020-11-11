@@ -12,6 +12,8 @@ Powered by [@codex_bot/notify](https://github.com/codex-bot/notify) application.
 
 **Required.** Endpoint for sending message to chat.
 
+Read [the manual](https://github.com/codex-bot/notify#getting-started) to get a webhook endpoint for your chat. 
+
 ### `message`
 
 **Required.** Message text.
@@ -43,7 +45,7 @@ Response status code
 - name: Send a chat notification via @codex_bot
   uses: codex-team/action-codexbot-notify@v1
   with:
-    webhook: ${{ secrets.CODEX_BOT_CHAT }}
+    webhook: ${{ secrets.CODEXBOT_NOTIFY_WEBHOOK }}
     message: '📦 [@editorjs/editorjs](https://npmjs.com/package/@editorjs/editorjs) 2.19.0 was published'
     parse_mode: 'markdown'
     disable_web_page_preview: true
