@@ -1,0 +1,11 @@
+{
+  "name": "action-codexbot-notify",
+  "scripts": {
+    "build": "node_modules/.bin/ncc build index.js --minify"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.2.6",
+    "@vercel/ncc": "^0.25.1",
+    "axios": "^0.21.0"
+  }
+}
