@@ -1,5 +1,8 @@
 name: '@codex_bot notifier'
 description: 'Send notification to chat from @codex_bot'
+branding:
+  icon: 'bell'  
+  color: 'white'
 
 inputs:
   webhook:
