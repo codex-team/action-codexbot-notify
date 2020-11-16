@@ -41,7 +41,6 @@ Response status code
 ## Usage
 
 ```
-...
 - name: Send a chat notification via @codex_bot
   uses: codex-team/action-codexbot-notify@v1
   with:
@@ -49,5 +48,20 @@ Response status code
     message: '📦 [@editorjs/editorjs](https://npmjs.com/package/@editorjs/editorjs) 2.19.0 was published'
     parse_mode: 'markdown'
     disable_web_page_preview: true
-...
+```
+
+You can use [codex-team/action-nodejs-package-info](https://github.com/codex-team/action-nodejs-package-info) to get package information automatically.
+
+```
+- name: Get package info
+  id: package
+  uses: codex-team/action-nodejs-package-info@v1
+
+- name: Send a message
+  uses: codex-team/action-codexbot-notify@v1
+  with:
+    webhook: ${{ secrets.CODEX_BOT_CHAT }}
+    message: '📦 [${{ steps.package.outputs.name }}](${{ steps.package.outputs.npmjs-link }}) ${{ steps.package.outputs.version }}  was published'
+    parse_mode: 'markdown'
+    disable_web_page_preview: true
 ```
